@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  node:
+    build: .
+    tty: true
+    ports:
+      - '80:80'
+    volumes:
+      - type: bind
+        source: src
+        target: /var/www/html
+    working_dir: /var/www/html
+volumes:
+  node-modules:
+    external: true
