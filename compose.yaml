@@ -4,12 +4,9 @@ services:
     build: .
     tty: true
     ports:
-      - '80:80'
+      - '8080:80'
     volumes:
       - type: bind
         source: src
-        target: /var/www/html
-    working_dir: /var/www/html
-volumes:
-  node-modules:
-    external: true
+        target: /usr/local/apache2/htdocs/
+    working_dir: /usr/local/apache2/htdocs/
